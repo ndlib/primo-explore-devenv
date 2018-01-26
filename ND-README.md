@@ -4,7 +4,7 @@
 1. Clone repository
 2. Follow the instructions in the [README](README.md) With the exception of step 9 and 10.
 
-# Running the app locally.
+# Running the app
 
 1. gulp run --view NDU
 2. go to localhost:8003/primo-explore/?vid=NDU  
