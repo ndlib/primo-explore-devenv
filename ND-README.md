@@ -1,5 +1,5 @@
 
-# Installation For NDU
+# Installation For ND
 
 1. Clone repository
 2. Follow the instructions in the [README](README.md)
