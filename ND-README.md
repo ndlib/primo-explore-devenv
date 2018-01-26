@@ -10,6 +10,14 @@
 2. go to localhost:8003/primo-explore/?vid=NDU  
 
 
+# Comiting changes.
+1. Branch off of master.
+2. Make your changes.
+3. Make a PR against UA.
+4. Deploy UA branch to pprd.
+5. Update the Changelog.
+6. Upon Approval PR against Master.  
+
 # Deploy Instructions
 
 1. Run gulp create-package
