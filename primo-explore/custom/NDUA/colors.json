@@ -1,8 +1,8 @@
 {
-  "primary": "#53738C",
-  "secondary" : "#A9CDD6",
+  "primary": "#082142",
+  "secondary" : "rgba(10,34,65,.5)",
   "backgroundColor" : "white",
-  "links": "#5C92BD",
+  "links": "#93601d",
   "warning": "tomato",
   "positive": "#0f7d00",
   "negative": "gray",
