@@ -23,10 +23,11 @@
 
 ## UA Deploy Instructions
 
-1. Run gulp create-package on the UA branch.
-2. Select the package you want to create NDUA, NDU or HCC.
-3. Install the file in back office as in [README](README.md)
-4. Press deploy at the top of page you uploaded the package to.
+1. Copy NDU to NDUA if you want to publish to pprd
+2. Run gulp create-package on the master branch.
+3. Select the package you want to create NDUA or HCC.
+4. Install the file in back office as in [README](README.md)
+5. Press deploy at the top of page you uploaded the package to.
 
 
 ## Prod Deploy Instructions
