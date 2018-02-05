@@ -12,7 +12,7 @@
         // var app = angular.module('centralCustom', ['angularLoad']);
 
     /****************************************************************************************************/
-/*
+
     app.component('prmSearchBarAfter', {
         template: `<span style="margin-left: 40%;">Hello World</span>`
     });
@@ -20,5 +20,5 @@
     app.component('prmServiceDetailsAfter', {
         template: `<div style="margin-left: 40%;">Hello World</div>`
     });
-*/
+
 })();
