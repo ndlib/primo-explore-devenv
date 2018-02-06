@@ -1,4 +1,5 @@
 primo-explore/tmp/
 .idea/
+.DS_Store
 .nvmrc
 primo-explore/custom/NDU/node_modules
