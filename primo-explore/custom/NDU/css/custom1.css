@@ -616,3 +616,36 @@ md-list.prm-list.prm-linkable-list-items md-list-item > .md-button > .button-con
     background-color: #7d1538; }
 
 /* primary color hook end*/
+
+/* Favorites Icon */
+.result-item-actions .pin-button.pinned md-icon {
+  transform: none;
+}
+
+svg[id^="prm_pin"] {
+  background: url("../img/bookmark.png") no-repeat;
+  background-size: contain;
+}
+
+svg[id^="prm_pin"] path {
+  display: none;
+}
+
+.pinDummy.animating prm-icon md-icon svg {
+  background: url("../img/bookmark.png") no-repeat;
+  background-size: contain;
+}
+
+.pinDummy.animating prm-icon md-icon svg path {
+  display: none;
+}
+
+svg[id^="prm_unpin"] {
+  background: url("../img/unbookmark.png") no-repeat;
+  background-size: contain;
+}
+
+svg[id^="prm_unpin"] path {
+  display: none;
+}
+/* ~Favorites Icon */
