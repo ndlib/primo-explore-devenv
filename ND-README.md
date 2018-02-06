@@ -48,6 +48,10 @@ https://github.com/ExLibrisGroup/primo-explore-package/tree/master/VIEW_CODE/js
 angular.reloadWithDebugInfo()
 angular.element($0).scope().$ctrl
 
+### Show Directives
+The text file showDirectives.txt has javascript that will show the directives that you can add components to.
+You need to bookmark the javascript. 
+
 ## Examples
 ```javascript
 app.controller('FullViewAfterController', ['angularLoad', function (angularLoad) {
