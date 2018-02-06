@@ -37,3 +37,41 @@
 3. Select the package you want to create NDU or HCC.
 4. Install the file in back office as in [README](README.md)
 5. Press deploy at the top of page you uploaded the package to.
+
+
+## Finding pnx data
+
+See recipe 2
+https://github.com/ExLibrisGroup/primo-explore-package/tree/master/VIEW_CODE/js
+
+### Console commands
+angular.reloadWithDebugInfo()
+angular.element($0).scope().$ctrl
+
+## Examples
+```javascript
+app.controller('FullViewAfterController', ['angularLoad', function (angularLoad) {
+    var vm = this;
+    vm.title = vm.parentCtrl.item.pnx.display.title[0] || '';
+}]);
+
+app.component('prmFullViewAfter', {
+  bindings: {parentCtrl: '<'},
+  controller: 'FullViewAfterController',
+  template: `<div>{{$ctrl.title}}</div>`
+});
+```
+
+## Adding the http object to a controller
+
+```javascript
+app.controller('FullViewAfterController', ['angularLoad', '$http', function (angularLoad, http) {
+  // http can be used
+  http.get("url", { })
+    .then(function (response) {
+
+    }).catch(function (response) {
+
+    });
+}
+```
