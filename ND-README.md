@@ -39,7 +39,7 @@
 5. Press deploy at the top of page you uploaded the package to.
 
 
-## Finding pnx data
+## Finding pnx data and application directives
 
 See recipe 2
 https://github.com/ExLibrisGroup/primo-explore-package/tree/master/VIEW_CODE/js
@@ -50,9 +50,15 @@ angular.element($0).scope().$ctrl
 
 ### Show Directives
 The text file showDirectives.txt has javascript that will show the directives that you can add components to.
-You need to bookmark the javascript. 
+You need to bookmark the javascript.
 
 ## Examples
+
+### Getting from the pnx record into a component
+make sure you add.
+bindings: {parentCtrl: '<'},
+I don't believe you need to have the controller but I think that protecting against null access is a good idea.
+
 ```javascript
 app.controller('FullViewAfterController', ['angularLoad', function (angularLoad) {
     var vm = this;
@@ -66,7 +72,7 @@ app.component('prmFullViewAfter', {
 });
 ```
 
-## Adding the http object to a controller
+### Adding the http object to a controller
 
 ```javascript
 app.controller('FullViewAfterController', ['angularLoad', '$http', function (angularLoad, http) {
