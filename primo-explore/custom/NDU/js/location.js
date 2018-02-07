@@ -9,12 +9,13 @@
         let vm = this
 
         vm.isOutboundLink = false
+        let delivery = this.parentCtrl.result.delivery
 
         // if we have holdings, display holdings
-        if (vm.parentCtrl.result.delivery.holding.length > 0) {
-            let holdings = vm.parentCtrl.result.delivery.holding
+        if (delivery.holding.length > 0) {
+            let holdings = delivery.holding
             for (let i in holdings) {
-                holdings[i].libraryCode = vm.parentCtrl.$translate.instant(holdings[i].libraryCode)
+                holdings[i].libraryCode = this.parentCtrl.$translate.instant(holdings[i].libraryCode)
                 // for some reason &nbsp; wasn't being translated to a space by the browser, so do it manually
                 holdings[i].subLocation = holdings[i].subLocation.replace('&nbsp;', ' ')
             }
@@ -26,17 +27,17 @@
             let code = 'Online access may be available'
 
             // this is set if there are no links (other than findtext) or holdings
-            if (vm.parentCtrl.result.delivery.availability[0] === 'no_fulltext') {
+            if (delivery.availability[0] === 'no_fulltext') {
                 code = 'Online Access Not Found'
 
                 // we want to link to ILL directly on the list page
-                let link = vm.parentCtrl.result.delivery.availabilityLinksUrl[0]
+                let link = delivery.availabilityLinksUrl[0]
 
                 // if we don't have a link, just findtext, replace it with ill
                 if (link.includes('findtext.library.nd.edu')) {
                     let start = link.indexOf('?')
                     const ill = 'https://login.proxy.library.nd.edu/login?url=https://nd.illiad.oclc.org/illiad/IND/illiad.dll/OpenURL'
-                    vm.isOutboundLink =  ill + link.substr(start)
+                    vm.isOutboundLink = ill + link.substr(start)
                     code = 'Access via ILL'
                 }
             }
@@ -52,7 +53,10 @@
                 return
             }
 
-            let eventData = {index: 'getit_link1_0', target: this.parentCtrl.$element[0]};
+            let eventData = {
+                index: 'getit_link1_0',
+                target: this.parentCtrl.$element[0]
+            };
             this.parentCtrl.openFullDisplayWithGetit1.emit(eventData);
         }
     }])
