@@ -30,3 +30,12 @@ svg[id^="prm_unpin"] path {
   display: none;
 }
 /* ~Favorites Icon */
+
+/* Hide Tags */
+/* Hide Tags in Detailed Display */
+[aria-label="Tags"]{display:none;}
+#tags{display:none;}
+/* Hide Tags in Menu Tab */
+a.md-button[aria-label="Tags"] {display:none;}
+a.md-button[aria-label="nui.mainmenu.label.tags"] {display:none;}
+/* ~Hide Tags */
