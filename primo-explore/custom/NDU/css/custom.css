@@ -30,3 +30,18 @@ svg[id^="prm_unpin"] path {
   display: none;
 }
 /* ~Favorites Icon */
+
+/* Locations Display */
+prm-search-result-availability-line .layout-align-start-start.layout-row {
+  display: none;
+}
+
+prm-search-result-availability-line-after .layout-align-start-start.layout-row {
+  display: flex;
+}
+
+  /* don't display useless links in the fullscreen details page */
+.full-view-inner-container prm-search-result-availability-line-after .layout-align-start-start.layout-row {
+  display: none;
+}
+/* ~Locations Display */
