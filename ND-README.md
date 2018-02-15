@@ -18,7 +18,7 @@
 3. Make a PR against UA (the current default branch)
 4. When it is approved deploy UA branch to pprd.
 5. when it is approved update the Changelog.
-6. Make PR against Master.  
+6. Make PR against Master.
 
 
 ## UA Deploy Instructions
@@ -54,7 +54,24 @@ angular.element($0).scope().$ctrl
 The text file showDirectives.txt has javascript that will show the directives that you can add components to.
 You need to bookmark the javascript.
 
+# Custom JS
+
+## Explenation of JS build
+The gulp command used to build the custom files concatonates all JS files in the js directory into `custom.js`.
+This is done in alphabetical order (how glob orders files). The NUI is expecting one module (`viewCustom`) used for custom code.
+Modules can be defined only one time. To allow us to split our code into multiple JS files we've created the `1a_firstInclude.js` and
+`zz_lastInclude.js` files. In `firstInclude` we define the function `registerModule`. This function is required to be called by all
+custom modules (which **cannot** be called `viewCustom`). All modules defined by `registerModule` will be included in our `viewCustom`
+which is created in `lastInclude`. We rely on the alphabetical order of includes to make sure our `viewCustom` is defined after
+all other modules are registered.
+
 ## Examples
+
+### Defining a new module
+```javascript
+let app = angular.module('fooModule', ['angularLoad']);
+registerModule('fooModule')
+```
 
 ### Getting from the pnx record into a component
 make sure you add.
@@ -86,4 +103,12 @@ app.controller('FullViewAfterController', ['angularLoad', '$http', function (ang
 
     });
 }
+```
+
+### Translating
+Primo can do some translations for us (eg. from HESB to "Notre Dame, Hesburgh Library")
+To do this in a controller:
+```javascript
+  let vm = this
+  let translated = vm.parentCtrl.$translate.instant("valueToTranslate")
 ```
